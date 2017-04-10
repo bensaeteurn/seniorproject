@@ -55,6 +55,11 @@ body {
     flex: 1 1 calc(45%);
     padding: 20px;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.song:hover {
+    color: #999;
 }
 
 .artist {
@@ -78,4 +83,18 @@ body {
     right: 0;
     font-size: 12px;
 
+}
+
+.popup {
+    
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    background: white;
+    display: none;
 }
