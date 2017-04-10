@@ -11,38 +11,71 @@ html {
 #container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 50px;
 }
 
 #header {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     width: 100%;
     color: red;
     font-size: 50px;
     text-align: center;
     height: 100px;
+    background-color: #ded6d6;
 }
 
 body {
     margin: 0 0 100px 0;
     padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+
 }
 
-#rose {
-    width: 200px
-}
 
 #footer {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     position: absolute;
     left: 0;
     bottom: 0;
     height: 100px;
     width: 100%;
     box-sizing: border-box;
+    background-color: #ded6d6;
 }
 
 #desc {
     width: 200px;
     border: 1px solid black;
     padding: 10px;
+}
+
+.song {
+    /*border: 1px solid black;*/
+    flex: 1 1 calc(45%);
+    padding: 20px;
+    font-size: 20px;
+}
+
+.artist {
+
+
+}
+
+.title {
+
+
+}
+
+.title::before {
+    content: ' - ';
+}
+
+.copyright {
+    margin: 5px;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+
 }
