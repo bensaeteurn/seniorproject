@@ -6,34 +6,54 @@
    
     <script>
         $(document).ready(function(){
-            $('.song').mouseenter(function() {
-                // $(this).siblings('.about').show();
+            // $('.song').mouseenter(function() {
+            //     // $(this).siblings('.about').show();
                 
-                // .position() uses position relative to the offset parent, 
-                var pos = $(this).position();
+            //     // .position() uses position relative to the offset parent, 
+            //     var pos = $(this).position();
 
-                // .outerWidth() takes into account border and padding.
-                var width = $(this).outerWidth();
+            //     // .outerWidth() takes into account border and padding.
+            //     var width = $(this).outerWidth();
 
-                var height = $(this).outerHeight();
+            //     var height = $(this).outerHeight();
 
-                //show the menu directly over the placeholder
-                $(this).next('.about').css({
-                    position: "absolute",
-                    top: (pos.top + height) + "px",
-                    left: pos.left + "px"
-                }).fadeIn('fast');
+            //     //show the menu directly over the placeholder
+            //     $(this).next('.about').css({
+            //         position: "absolute",
+            //         top: (pos.top + height) + "px",
+            //         left: pos.left + "px"
+            //     }).fadeIn('fast');
 
-            })
-            .mouseleave(function() {
-                $(this).siblings('.about').fadeOut('fast');
+            // })
+            // .mouseleave(function() {
+            //     $(this).siblings('.about').fadeOut('fast');
+            // });
+            $('.song').click(function(e) {
+                e.preventDefault();
+                var href = $(this).attr('href');
+                var videoId = /v=(.+)/.exec(href)[1];
+                $('iframe').attr('src', 'http://www.youtube.com/embed/' + videoId + '?ecver=2&autoplay=1');
+                $('.overlay').css("display", "flex").hide().fadeIn();
+                return false;
+            });
+
+            $('.overlay').click(function(){
+                if (!$(this).closest('.modal').length) {
+                    $(this).fadeOut(function(){
+                        $('iframe').attr('src', '');
+                    });
+                }
             });
         });
     </script>
 </head>
 
 <body>
-    
+    <div class="overlay"> 
+        <div class="modal">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FVTxmZOfOKQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
     <div id="header">Ben's Playlist</div>
     <div id="container">
         <a href="https://www.youtube.com/watch?v=FVTxmZOfOKQ" class="song"><span class="artist">Ariana Grande</span><span class="title">Bad Decisions</span></a>

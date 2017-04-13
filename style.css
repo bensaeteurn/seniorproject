@@ -132,3 +132,17 @@ body {
     display: none;
     position: absolute;
 }
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+
+}
