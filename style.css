@@ -147,6 +147,10 @@ body {
 
 }
 
+a.song:nth-child(2n+1) {
+    text-align: right;
+}
+
 /* ----------- iPhone 6 ----------- */
 
 /* Portrait and Landscape */
